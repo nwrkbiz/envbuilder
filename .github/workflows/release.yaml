@@ -47,7 +47,7 @@ jobs:
       - name: Build and Push
         run: |
           VERSION=$(./scripts/version.sh)
-          BASE=ghcr.io/coder/envbuilder
+          BASE=ghcr.io/nwrkbiz/envbuilder
 
           ./scripts/build.sh \
             --arch=amd64 \
