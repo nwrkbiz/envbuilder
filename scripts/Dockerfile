@@ -2,7 +2,7 @@ FROM debian:12
 ARG TARGETARCH
 
 RUN apt-get update && \
-    apt-get install -y git openssh-client curl
+    apt-get install -y git openssh-client curl jq
 COPY envbuilder-${TARGETARCH} /.envbuilder/bin/envbuilder
 COPY entrypoint.sh /.envbuilder/bin/entrypoint.sh
 
