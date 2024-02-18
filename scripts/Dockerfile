@@ -1,8 +1,7 @@
-FROM debian:12
+FROM alpine:3
 ARG TARGETARCH
 
-RUN apt-get update && \
-    apt-get install -y git openssh-client
+RUN apk add git openssh-client-default curl
 COPY envbuilder-${TARGETARCH} /.envbuilder/bin/envbuilder
 COPY entrypoint.sh /.envbuilder/bin/entrypoint.sh
 
