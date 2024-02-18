@@ -13,4 +13,4 @@ if [ "$GIT_URL" != "${GIT_URL#ssh://}" ] ; then
   git clone $GIT_URL $WORKSPACE_FOLDER --recurse-submodules
 fi
 
-/.envbuilder/bin/envbuilder
+#/.envbuilder/bin/envbuilder
