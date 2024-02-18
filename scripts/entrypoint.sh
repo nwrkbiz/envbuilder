@@ -1,6 +1,10 @@
 #!/bin/sh
 
+set -e
+set -x
+
 if [ "$GIT_URL" != "${GIT_URL#ssh://}" ] ; then
+  echo "SSH URL detected, trying to clone via SSH"
   eval $(ssh-agent)
   DOMAIN=$(echo "$GIT_URL" | awk -F@ '{print $2}' | awk -F/ '{print $1}' | awk -F: '{print $1}')
   PORT=$(echo "$GIT_URL" | awk -F: '{print $3}' | awk -F/ '{print $1}')
