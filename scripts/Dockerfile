@@ -10,4 +10,4 @@ ENV KANIKO_DIR /.envbuilder
 # Kaniko looks for the Docke config at $DOCKER_CONFIG/config.json
 ENV DOCKER_CONFIG /.envbuilder
 
-ENTRYPOINT  [ "/.envbuilder/bin/entrypoint.sh" ]
+ENTRYPOINT  [ "/bin/bash", "-c", "/.envbuilder/bin/entrypoint.sh" ]
