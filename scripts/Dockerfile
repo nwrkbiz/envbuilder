@@ -1,7 +1,7 @@
 FROM alpine:3
 ARG TARGETARCH
 
-RUN apk add git
+RUN apk add git openssh-client-default
 COPY envbuilder-${TARGETARCH} /.envbuilder/bin/envbuilder
 COPY entrypoint.sh /.envbuilder/bin/entrypoint.sh
 
