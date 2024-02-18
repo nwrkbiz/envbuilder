@@ -364,11 +364,11 @@ func Run(ctx context.Context, options Options) error {
 		cloneOpts.RepoURL = options.GitURL
 
 		cloned := false
-		if !strings.Contains(options.GitURL, "ssh://") {
+		//if !strings.Contains(options.GitURL, "ssh://") {
 			cloned, fallbackErr = CloneRepo(ctx, cloneOpts)
-		} else {
-			cloned = true
-		}
+		//} else {
+		//	cloned = true
+		//}
 		if fallbackErr == nil {
 			if cloned {
 				endStage("📦 Cloned repository!")
