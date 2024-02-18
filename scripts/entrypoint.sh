@@ -1,6 +1,5 @@
 #!/bin/sh
 
-set -e
 set -x
 
 if [ "$GIT_URL" != "${GIT_URL#ssh://}" ] ; then
