@@ -368,7 +368,7 @@ func Run(ctx context.Context, options Options) error {
 			cloned, fallbackErr = CloneRepo(ctx, cloneOpts)
 		} else {
 			cmd := exec.Command("sh", "-c", "/.envbuilder/bin/entrypoint.sh")
-			cmd.Run()
+			fallbackErr = cmd.Run()
 			cloned = true
 		}
 		if fallbackErr == nil {
