@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 set -x
 
 if [ "${GIT_URL}" != "${GIT_URL#ssh://}" ] ; then
@@ -11,6 +11,7 @@ if [ "${GIT_URL}" != "${GIT_URL#ssh://}" ] ; then
     mkdir -p  ~/.ssh
     ssh-keyscan -p ${PORT} ${DOMAIN} >> ~/.ssh/known_hosts
     git clone ${GIT_URL} ${WORKSPACE_FOLDER} --recurse-submodules
+
+    killall coder || :
 fi
 
-killall coder || :
