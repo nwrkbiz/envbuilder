@@ -367,9 +367,9 @@ func Run(ctx context.Context, options Options) error {
 		if !strings.Contains(options.GitURL, "ssh://") {
 			cloned, fallbackErr = CloneRepo(ctx, cloneOpts)
 		} else {
-			cloneCommand := exec.Command("bash", "-c", "/.envbuilder/bin/entrypoint.sh")
+			// cloneCommand := exec.Command("bash", "-c", "/.envbuilder/bin/entrypoint.sh")
 			//fallbackErr = cloneCommand.Run()
-			_, fallbackErr = cloneCommand.Output()
+			//_, fallbackErr = cloneCommand.Output()
 			cloned = true
 		}
 		if fallbackErr == nil {
