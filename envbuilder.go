@@ -369,9 +369,7 @@ func Run(ctx context.Context, options Options) error {
 		} else {
 			cloneCommand := exec.Command("bash", "-c", "/.envbuilder/bin/entrypoint.sh")
 			//fallbackErr = cloneCommand.Run()
-			stdoutClone, fallbackErr := cloneCommand.Output()
-			logf(codersdk.LogLevelInfo, "Clone finished stdout: %s", string(stdoutClone))
-			logf(codersdk.LogLevelInfo, "Clone finished stderr: %s", fallbackErr.Error())
+			_, fallbackErr = cloneCommand.Output()
 			cloned = true
 		}
 		if fallbackErr == nil {
